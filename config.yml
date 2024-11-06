@@ -21,7 +21,7 @@ rails:
         define flow self check hallucination
           $result = execute self_check_hallucination(answer=$bot_response)
           if $result == "Yes":
-            bot "I apologize, aborting as uncertain hallucinate information detected."
+            bot "I apologize, aborting as uncertain hallucinated information detected."
             stop
     - name: self check facts
       type: rail
@@ -29,7 +29,7 @@ rails:
         define flow self check facts
           $result = execute self_check_facts(evidence={{ context }}, response={{ bot_response }})
           if $result == "no":
-            bot "I apologize, aborting as uncertain hallucinate information detected."
+            bot "I apologize, aborting"
             stop
 
 prompts:
